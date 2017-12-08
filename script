@@ -399,7 +399,7 @@ $(document).ready(() => {
         let items = document.getElementsByClassName('KittyStatus-itemText');
         if (ethPrice && items.length > 0 && document.getElementsByClassName('extUSD').length > 0) {
             for (let item of items) {
-                if (item.parentElement.parentElement.className == "KittyStatus" || item.parentElement.parentElement.className == "KittyStatus KittyStatus--list") {
+                if (item.innerText.match(/(sire|sale)/) && (item.parentElement.parentElement.className == "KittyStatus" || item.parentElement.parentElement.className == "KittyStatus KittyStatus--list")) {
                     if (!item.parentElement.innerHTML.includes("Icon--timer") && !item.parentElement.innerHTML.includes('Bun in oven')) {
                         let cur = item.getElementsByTagName('span')[0].innerText.split(' ');
 
